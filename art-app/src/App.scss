@@ -20,57 +20,51 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
   margin: 0 auto;
   padding: 20px;
-  // background-color: $bg-color;
-  // border-radius: 5px;
-  // padding-top: 5rem;
-
-  // /*max-width: 120rem;*/
 }
 
-.search-bar {
-  height: 4.8rem;
-  width: 32rem;
-  background: var(--primary-color);
-  border-radius: 5px;
-  border: none;
-  color: #72848d;
-  padding-left: 1rem;
-  margin-right: 3rem;
-}
+// .search-bar {
+//   height: 4.8rem;
+//   width: 32rem;
+//   background: var(--primary-color);
+//   border-radius: 5px;
+//   border: none;
+//   color: #72848d;
+//   padding-left: 1rem;
+//   margin-right: 3rem;
+// }
 
-.button {
-  box-shadow: 0px 3px 5px rgb(0 0 0 / 20%), 0px 1px 18px rgb(0 0 0 / 12%),
-    0px 6px 10px rgb(0 0 0 / 14%);
-  border-radius: 4px;
-  font-size: 1em;
-  font-weight: 400;
-  color: var(--wrapper-color);
-  cursor: pointer;
-  transition: all 0.3s;
-  letter-spacing: 0.9px;
-  text-transform: uppercase;
-  text-decoration: none;
-  background-color: var(--button-color);
-  border: none;
-}
+// .button {
+//   box-shadow: 0px 3px 5px rgb(0 0 0 / 20%), 0px 1px 18px rgb(0 0 0 / 12%),
+//     0px 6px 10px rgb(0 0 0 / 14%);
+//   border-radius: 4px;
+//   font-size: 1em;
+//   font-weight: 400;
+//   color: var(--wrapper-color);
+//   cursor: pointer;
+//   transition: all 0.3s;
+//   letter-spacing: 0.9px;
+//   text-transform: uppercase;
+//   text-decoration: none;
+//   background-color: var(--button-color);
+//   border: none;
+// }
 
-.button:hover {
-  background-color: var(--hover-color);
-}
-.button:active {
-  background-color: var(--active-color);
-}
-.button:focus {
-  outline: none;
-}
+// .button:hover {
+//   background-color: var(--hover-color);
+// }
+// .button:active {
+//   background-color: var(--active-color);
+// }
+// .button:focus {
+//   outline: none;
+// }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px 20px;
-}
+// .main {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 30px 20px;
+// }

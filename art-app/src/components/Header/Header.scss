@@ -11,7 +11,7 @@
   }
 
   &__nav {
-    width: 50%;
+    width: 60%;
   }
 
   &__list {
@@ -35,5 +35,11 @@
     &:hover {
       color: $button-color;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
   }
 }

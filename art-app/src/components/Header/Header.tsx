@@ -23,6 +23,11 @@ function Header(props: any) {
                 <button className='header__button'>Quiz</button>
               </Link>
             </li>
+            <li className='header__list-item'>
+              <Link to='/settings'>
+                <button className='header__button'>Settings</button>
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>

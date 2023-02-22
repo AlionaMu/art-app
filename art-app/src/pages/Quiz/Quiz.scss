@@ -1,0 +1,58 @@
+@import './../../styles/colors.scss';
+
+.quiz {
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__link {
+    height: 10vh;
+    width: 300px;
+    margin-bottom: 30px;
+    padding: 100px 80px 5px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    transition: box-shadow 0.25s linear, transform 0.7s;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 1px 2px 4px 4px rgb(0 0 255 / 10%);
+
+    &_painters {
+      background-image: url('https://github.com/AlionaMu/art-data/blob/main/img/145.jpg?raw=true');
+    }
+
+    &_paintings {
+      background-image: url('https://github.com/AlionaMu/art-data/blob/main/img/104.jpg?raw=true');
+    }
+  }
+
+  &__button {
+    font-family: 'Roboto';
+    width: 180px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.9px;
+    border-radius: 12px;
+    border: 2px solid $bright-color;
+    color: $font-color;
+    background-color: $bright-color;
+    opacity: 0.8;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      box-shadow: 1px 2px 4px 4px rgb(0 0 255 / 5%);
+      opacity: 0.6;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .quiz {
+    &__link {
+      width: 40vw;
+    }
+  }
+}
