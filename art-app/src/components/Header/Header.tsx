@@ -24,6 +24,11 @@ function Header(props: any) {
               </Link>
             </li>
             <li className='header__list-item'>
+              <Link to='/gallery'>
+                <button className='header__button'>Gallery</button>
+              </Link>
+            </li>
+            <li className='header__list-item'>
               <Link to='/settings'>
                 <button className='header__button'>Settings</button>
               </Link>
