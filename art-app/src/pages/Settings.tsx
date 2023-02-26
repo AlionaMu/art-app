@@ -1,5 +1,10 @@
 function Settings(props: any) {
-  return <div>SETTINGS</div>
+  return (
+    <main className='main'>
+      <section className='main__title-container'>settings</section>
+      <section className='settings wrapper'></section>
+    </main>
+  )
 }
 
 export default Settings

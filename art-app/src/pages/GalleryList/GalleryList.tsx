@@ -1,4 +1,4 @@
-import GalleryCard, { Item } from '../GalleryCard/GalleryCard'
+import GalleryCard, { Item } from '../../components/GalleryCard/GalleryCard'
 import './GalleryList.scss'
 
 import { images } from '../../data/images'
@@ -11,12 +11,12 @@ import { images } from '../../data/images'
 // }
 
 const GalleryList = () => {
-  console.log(images)
   return (
     <>
-      <main className='main wrapper'>
+      <main className='main'>
+        <section className='main__title-container'>gallery</section>
         {images ? (
-          <div className='gallery'>
+          <div className='gallery wrapper'>
             {images.map((item: Item) => {
               return <GalleryCard props={item} key={item.imageNum} />
             })}

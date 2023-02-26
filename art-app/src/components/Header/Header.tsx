@@ -5,7 +5,9 @@ function Header(props: any) {
   return (
     <>
       <header className='header wrapper'>
-        <h1 className='header__logo'>art app</h1>
+        <Link to='/home'>
+          <h1 className='header__logo'>art app</h1>
+        </Link>
         <nav className='header__nav'>
           <ul className='header__list'>
             <li className='header__list-item'>

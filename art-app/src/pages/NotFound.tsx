@@ -1,8 +1,9 @@
 function NotFound() {
   return (
-    <div>
-      <h1>404</h1>
-    </div>
+    <main className='main'>
+      <section className='main__title-container'>404</section>
+      <section className='not-found wrapper'></section>
+    </main>
   )
 }
 

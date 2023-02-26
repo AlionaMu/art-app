@@ -1,8 +1,9 @@
 function AboutUs() {
   return (
-    <div>
-      <h1>This is the about page</h1>
-    </div>
+    <main className='main'>
+      <section className='main__title-container'>about</section>
+      <section className='about wrapper'></section>
+    </main>
   )
 }
 

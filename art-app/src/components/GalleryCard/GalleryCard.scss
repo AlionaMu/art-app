@@ -1,7 +1,7 @@
 @import './../../styles/colors.scss';
 
 .gallery-card {
-  height: 273px;
+  height: 289px;
   width: 200px;
   margin-bottom: 60px;
   background-color: $font-color;
@@ -21,11 +21,11 @@
 
   &__text {
     display: flex;
-    height: 70px;
+    height: 85px;
     flex-direction: column;
     justify-content: space-between;
     padding: 2px 12px;
     font-size: 14px;
-    color: green;
+    color: $dark-color;
   }
 }

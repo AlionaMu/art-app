@@ -45,6 +45,8 @@
     &:hover {
       box-shadow: 1px 2px 4px 4px rgb(0 0 255 / 5%);
       opacity: 0.6;
+      color: $dark-color;
+      font-weight: 800;
     }
   }
 }

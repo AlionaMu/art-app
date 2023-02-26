@@ -5,9 +5,17 @@
   flex-direction: row;
   justify-content: space-around;
 
+  & > * {
+    text-decoration: none;
+  }
+
   &__logo {
     text-transform: uppercase;
     font-size: 32px;
+    color: $bright-color;
+    &:hover {
+      color: $button-color;
+    }
   }
 
   &__nav {
