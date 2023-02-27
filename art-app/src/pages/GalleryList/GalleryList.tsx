@@ -1,4 +1,5 @@
-import GalleryCard, { Item } from '../../components/GalleryCard/GalleryCard'
+import GalleryCard from '../../components/GalleryCard/GalleryCard'
+import { Item } from '../../types'
 import './GalleryList.scss'
 
 import { images } from '../../data/images'

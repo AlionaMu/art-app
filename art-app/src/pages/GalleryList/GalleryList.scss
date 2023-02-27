@@ -1,5 +1,6 @@
 .gallery {
   display: flex;
+  flex-direction: row;
   max-width: 80rem;
   padding: 1.5rem 3rem;
   justify-content: space-around;

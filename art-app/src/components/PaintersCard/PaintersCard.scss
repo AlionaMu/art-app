@@ -1,0 +1,82 @@
+@import './../../styles/colors.scss';
+
+.painters-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  width: 380px;
+
+  &__img {
+    width: inherit;
+    border-radius: 10px;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 2px 4px 4px rgba(0, 0, 255, 0.2);
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    color: $bright-color;
+    margin: 20px 10px;
+  }
+
+  &__answers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 5px;
+  }
+
+  &__answer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 160px;
+    height: 45px;
+    border: 1px solid #eaeaea;
+    padding: 3px;
+    margin: 5px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 2px 4px 4px rgb(0 0 255 / 20%);
+    }
+  }
+}
+
+// @media (min-width: 410px) {
+//   .answers-wrapper {
+//     justify-items: center;
+//     padding: 5px 15px;
+//   }
+// }
+// @media (min-width: 500px) {
+//   .answers-wrapper {
+//     padding: 5px 15vw;
+//   }
+// }
+// @media (min-width: 980px) {
+//   .answers-wrapper {
+//     padding: 5px 18vw;
+//     row-gap: 12px;
+//   }
+// }
+// @media (min-width: 1100px) {
+//   .answers-wrapper {
+//     padding: 5px 20vw;
+//     row-gap: 12px;
+//   }
+// }
+// @media (min-width: 1280px) {
+//   .answers-wrapper {
+//     padding: 5px 22vw;
+//   }
+// }

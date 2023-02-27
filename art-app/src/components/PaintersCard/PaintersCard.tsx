@@ -1,9 +1,6 @@
-//     import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux'
 // import { Link } from 'react-router-dom';
-// import { RootState } from '../store';
-// import { setDetailedInfo } from '../store/cardsListSlice';
-
-import { getRandomArr } from '../../utils/getRandomArr'
+import { RootState } from '../../store'
 import './PaintersCard.scss'
 
 export interface Item {
@@ -13,8 +10,8 @@ export interface Item {
   imageNum: string
 }
 
-const PaintersCard = (props: any) => {
-  // const state = useSelector((state: RootState) => state.cardsList)
+const PaintersCard = () => {
+  const state = useSelector((state: RootState) => state.paintersGame)
   // const dispatch = useDispatch();
 
   // const onClickHandler = () => {
@@ -22,25 +19,29 @@ const PaintersCard = (props: any) => {
 
   //   dispatch(setDetailedInfo(props.props));
   // }
-
-  const randomArr = getRandomArr()
-  console.log(randomArr)
+  const number = state.roundNumber
+  const arrNumber = state.arr[number]
+  console.log('state in card', state.arr.rounds[number])
+  console.log(arrNumber)
   return (
-    <div className='painters-card' id={props.props.imageNum}>
+    <div className='painters-card' id={state.arr.rounds[number].id}>
       <div className='painters-card__text'>Who is the author of this picture?</div>
-      <img src='./images/21.jpg' className='painters-card__img'></img>
+      <img
+        src={`https://github.com/AlionaMu/art-data/blob/main/img/${state.arr.rounds[number].id}.jpg?raw=true`}
+        className='painters-card__img'
+      ></img>
       <div className='painters-card__answers'>
         <div className='painters-card__answer' data-num='0'>
-          Иван Шишкин
+          {state.arr.rounds[number].answers[0]}
         </div>
         <div className='painters-card__answer' data-num='1'>
-          Питер Брейгель
+          {state.arr.rounds[number].answers[1]}
         </div>
         <div className='painters-card__answer' data-num='2'>
-          Константин Маковский
+          {state.arr.rounds[number].answers[2]}
         </div>
         <div className='painters-card__answer' data-num='3'>
-          Рафаэль
+          {state.arr.rounds[number].answers[3]}
         </div>
       </div>
     </div>

@@ -4,28 +4,28 @@ import { images } from '../data/images'
 // Slice
 
 const emptyArr: any = []
-const ObjItem: any = {}
+// const ObjItem: any = {}
 
 const initialState = {
-  cardsList: images,
+  arr: emptyArr,
   answer: '',
   nextPageToken: '',
-  detailedInfo: ObjItem,
+  roundNumber: 1,
 }
 
 const paintersGameSlice = createSlice({
   name: 'paintersGame',
   initialState,
   reducers: {
-    setSearch: (state, action: PayloadAction<string>) => {
-      state.answer = action.payload
+    setGame: (state, action: PayloadAction<any>) => {
+      state.arr = action.payload
     },
-    setDetailedInfo: (state, action: PayloadAction<any>) => {
-      state.detailedInfo = action.payload
+    create: (state, action: PayloadAction<any>) => {
+      state.arr = action.payload
     },
   },
 })
 
-export const { setSearch, setDetailedInfo } = paintersGameSlice.actions
+export const { setGame, create } = paintersGameSlice.actions
 
 export default paintersGameSlice.reducer

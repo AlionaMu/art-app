@@ -5,13 +5,6 @@
 
 import './GalleryCard.scss'
 
-export interface Item {
-  author: string
-  name: string
-  year: string
-  imageNum: string
-}
-
 const GalleryCard = (props: any) => {
   // const state = useSelector((state: RootState) => state.cardsList)
   // const dispatch = useDispatch();
