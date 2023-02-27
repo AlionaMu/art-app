@@ -8,8 +8,6 @@ import Settings from './pages/Settings'
 import Paintings from './pages/Paintings/Paintings'
 import Painters from './pages/Painters/Painters'
 import GalleryList from './pages/GalleryList/GalleryList'
-// import { useState } from 'react';
-// import React from 'react';
 
 const Routes = (props: any) => {
   const routes = useRoutes([

@@ -1,4 +1,4 @@
-import { create, setGame } from '../../store/paintersGameSlice'
+import { setGame } from '../../store/paintersGameSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { AppDispatch, RootState, store } from '../../store'

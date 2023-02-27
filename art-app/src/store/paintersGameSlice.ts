@@ -20,12 +20,12 @@ const paintersGameSlice = createSlice({
     setGame: (state, action: PayloadAction<any>) => {
       state.arr = action.payload
     },
-    create: (state, action: PayloadAction<any>) => {
-      state.arr = action.payload
+    addCount: (state) => {
+      state.roundNumber = state.roundNumber++
     },
   },
 })
 
-export const { setGame, create } = paintersGameSlice.actions
+export const { setGame, addCount } = paintersGameSlice.actions
 
 export default paintersGameSlice.reducer

@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 // import { Link } from 'react-router-dom';
 import { RootState } from '../../store'
+import { addCount } from '../../store/paintersGameSlice'
 import './PaintersCard.scss'
 
 export interface Item {
@@ -10,15 +12,14 @@ export interface Item {
   imageNum: string
 }
 
-const PaintersCard = () => {
+const PaintersCard = (props: any) => {
   const state = useSelector((state: RootState) => state.paintersGame)
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  // const onClickHandler = () => {
-  //  // state.detailedInfo = props.props;
-
-  //   dispatch(setDetailedInfo(props.props));
-  // }
+  const onClickHandler = () => {
+    props.handleOpen()
+    dispatch(addCount())
+  }
   const number = state.roundNumber
   const arrNumber = state.arr[number]
   console.log('state in card', state.arr.rounds[number])
@@ -30,7 +31,7 @@ const PaintersCard = () => {
         src={`https://github.com/AlionaMu/art-data/blob/main/img/${state.arr.rounds[number].id}.jpg?raw=true`}
         className='painters-card__img'
       ></img>
-      <div className='painters-card__answers'>
+      <div className='painters-card__answers' onClick={onClickHandler}>
         <div className='painters-card__answer' data-num='0'>
           {state.arr.rounds[number].answers[0]}
         </div>
