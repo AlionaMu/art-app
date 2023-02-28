@@ -1,39 +1,54 @@
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
 import Modal from '@mui/material/Modal'
-import { useState } from 'react'
+import './BasicModal.scss'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from '../../store'
+import { addCount, setAuthorAnswer, setNameAnswer } from '../../store/paintersGameSlice'
+import { ModalType } from '../../types'
 
 const style = {
   position: 'absolute',
-  top: '50%',
+  top: '70%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+  width: '250px',
+  height: '320px',
+  borderRadius: '8px',
+  boxShadow:
+    '0px 1px 5px rgb(0 0 0 / 20%), 0px 3px 4px rgb(0 0 0 / 12%) 0px 2px 4px rgb(0 0 0 / 14%)',
 }
 
-const BasicModal = (props: any) => {
+const BasicModal = (props: ModalType) => {
+  const state = useSelector((state: RootState) => state.paintersGame)
+  const dispatch = useDispatch()
+  const number = state.roundNumber
+
+  const useDispatchers = () => {
+    dispatch(addCount())
+    dispatch(setAuthorAnswer(state.arr[number].authorAnswer))
+    dispatch(setNameAnswer(state.arr[number].nameAnswer))
+  }
+
+  const clickHandler = () => {
+    props.handleClose()
+    number >= 9 ? console.log('>>>>>') : useDispatchers()
+  }
+
   return (
     <>
-      <Modal
-        open={props.open}
-        onClick={props.handleClose}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'
-      >
-        <Box sx={style}>
-          <Typography id='modal-modal-title' variant='h6' component='h2'>
-            Text in a modal
-          </Typography>
-          <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
-        </Box>
-        {/* <Button onClick={props.handleClose}>Close modal</Button> */}
+      <Modal open={props.open} sx={style}>
+        <div className='modal'>
+          <img
+            src={`https://github.com/AlionaMu/art-data/blob/main/img/${
+              state.arr[state.roundNumber].id
+            }.jpg?raw=true`}
+            className='modal__image'
+          ></img>
+          <div className='modal__name'>{state.nameAnswer}</div>
+          <div className='modal__author'>{state.authorAnswer}</div>
+          <button className='modal__button' onClick={clickHandler}>
+            Continue
+          </button>
+        </div>
       </Modal>
     </>
   )

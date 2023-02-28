@@ -1,20 +1,21 @@
-import { setGame } from '../../store/paintersGameSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { setAuthorAnswer, setGame, setNameAnswer } from '../../store/paintersGameSlice'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { AppDispatch, RootState, store } from '../../store'
+import { AppDispatch } from '../../store'
 import { getGameObj } from '../../utils/getRandomArr'
 import './Quiz.scss'
+import { paintersGame } from '../../types'
 
 function Quiz() {
   const dispatch = useDispatch<AppDispatch>()
-  const state = useSelector((state: RootState) => state.paintersGame)
 
   const startGame = () => {
-    const game: any = getGameObj()
+    const game: paintersGame = getGameObj()
 
     dispatch(setGame(game))
     console.log('game', game)
-    console.log('state', state)
+    dispatch(setAuthorAnswer(game.rounds[0].authorAnswer))
+    dispatch(setNameAnswer(game.rounds[0].nameAnswer))
   }
 
   return (

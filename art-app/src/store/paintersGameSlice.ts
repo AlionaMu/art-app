@@ -1,31 +1,33 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { images } from '../data/images'
+import { paintersGame, paintersGameRound } from '../types'
 
-// Slice
-
-const emptyArr: any = []
-// const ObjItem: any = {}
+const emptyArr: paintersGameRound[] = []
 
 const initialState = {
   arr: emptyArr,
-  answer: '',
-  nextPageToken: '',
-  roundNumber: 1,
+  authorAnswer: '',
+  nameAnswer: '',
+  roundNumber: 0,
 }
 
 const paintersGameSlice = createSlice({
   name: 'paintersGame',
   initialState,
   reducers: {
-    setGame: (state, action: PayloadAction<any>) => {
-      state.arr = action.payload
+    setGame: (state, action: PayloadAction<paintersGame>) => {
+      state.arr = action.payload.rounds
     },
     addCount: (state) => {
-      state.roundNumber = state.roundNumber++
+      ++state.roundNumber
+    },
+    setAuthorAnswer: (state, action: PayloadAction<string>) => {
+      state.authorAnswer = action.payload
+    },
+    setNameAnswer: (state, action: PayloadAction<string>) => {
+      state.nameAnswer = action.payload
     },
   },
 })
 
-export const { setGame, addCount } = paintersGameSlice.actions
-
+export const { setGame, addCount, setAuthorAnswer, setNameAnswer } = paintersGameSlice.actions
 export default paintersGameSlice.reducer

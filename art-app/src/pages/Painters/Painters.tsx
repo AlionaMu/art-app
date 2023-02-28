@@ -1,8 +1,6 @@
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
 import BasicModal from '../../components/BasicModal/BasicModal'
 import PaintersCard from '../../components/PaintersCard/PaintersCard'
-import { RootState } from '../../store'
 
 function Painters() {
   const [open, setOpen] = useState(false)

@@ -9,7 +9,7 @@ import Paintings from './pages/Paintings/Paintings'
 import Painters from './pages/Painters/Painters'
 import GalleryList from './pages/GalleryList/GalleryList'
 
-const Routes = (props: any) => {
+const Routes = () => {
   const routes = useRoutes([
     {
       path: '/',
