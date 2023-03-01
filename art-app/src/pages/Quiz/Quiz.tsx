@@ -13,7 +13,6 @@ function Quiz() {
     const game: paintersGame = getGameObj()
 
     dispatch(setGame(game))
-    console.log('game', game)
     dispatch(setAuthorAnswer(game.rounds[0].authorAnswer))
     dispatch(setNameAnswer(game.rounds[0].nameAnswer))
   }

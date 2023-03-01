@@ -1,19 +1,6 @@
-//     import { useDispatch, useSelector } from 'react-redux';
-// import { Link } from 'react-router-dom';
-// import { RootState } from '../store';
-// import { setDetailedInfo } from '../store/cardsListSlice';
-
 import './GalleryCard.scss'
 
 const GalleryCard = (props: any) => {
-  // const state = useSelector((state: RootState) => state.cardsList)
-  // const dispatch = useDispatch();
-
-  // const onClickHandler = () => {
-  //  // state.detailedInfo = props.props;
-
-  //   dispatch(setDetailedInfo(props.props));
-  // }
   return (
     <div className='gallery-card' id={props.props.imageNum}>
       <div className='gallery-card__text'>

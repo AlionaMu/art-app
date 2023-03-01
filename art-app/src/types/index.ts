@@ -18,6 +18,11 @@ export interface paintersGameRound {
   roundNumber: number
 }
 
+export interface CardsArr {
+  cardsArr: Item[]
+  arr: number[]
+}
+
 export type CardType = {
   handleOpen: () => void
   open: boolean

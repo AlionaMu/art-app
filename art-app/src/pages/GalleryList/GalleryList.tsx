@@ -4,13 +4,6 @@ import './GalleryList.scss'
 
 import { images } from '../../data/images'
 
-// export interface ItemType {
-//   author: string
-//   name: string
-//   year: string
-//   imageNum: string
-// }
-
 const GalleryList = () => {
   return (
     <>

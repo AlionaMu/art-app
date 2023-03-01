@@ -1,4 +1,4 @@
-function Paintings(props: any) {
+function Paintings() {
   return (
     <main className='main'>
       <section className='main__title-container'>paintings game</section>

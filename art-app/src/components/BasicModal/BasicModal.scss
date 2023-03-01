@@ -13,6 +13,12 @@
     0px 2px 4px rgb(0 0 0 / 14%);
   border-radius: 8px;
 
+  &__answer {
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
   &__image {
     width: 150px;
     border-radius: 12px;

@@ -6,6 +6,7 @@ function Painters() {
   const [open, setOpen] = useState(false)
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
+
   return (
     <main className='main'>
       <section className='main__title-container'>painters game</section>

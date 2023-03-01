@@ -1,7 +1,7 @@
 import './Header.scss'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-function Header(props: any) {
+function Header() {
   return (
     <>
       <header className='header wrapper'>

@@ -8,6 +8,7 @@ const initialState = {
   authorAnswer: '',
   nameAnswer: '',
   roundNumber: 0,
+  isAnswerTrue: false,
 }
 
 const paintersGameSlice = createSlice({
@@ -26,8 +27,12 @@ const paintersGameSlice = createSlice({
     setNameAnswer: (state, action: PayloadAction<string>) => {
       state.nameAnswer = action.payload
     },
+    setAnswer: (state, action: PayloadAction<boolean>) => {
+      state.isAnswerTrue = action.payload
+    },
   },
 })
 
-export const { setGame, addCount, setAuthorAnswer, setNameAnswer } = paintersGameSlice.actions
+export const { setGame, addCount, setAuthorAnswer, setNameAnswer, setAnswer } =
+  paintersGameSlice.actions
 export default paintersGameSlice.reducer

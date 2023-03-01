@@ -1,4 +1,4 @@
-function Settings(props: any) {
+function Settings() {
   return (
     <main className='main'>
       <section className='main__title-container'>settings</section>

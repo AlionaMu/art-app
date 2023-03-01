@@ -24,8 +24,8 @@ const BasicModal = (props: ModalType) => {
 
   const useDispatchers = () => {
     dispatch(addCount())
-    dispatch(setAuthorAnswer(state.arr[number].authorAnswer))
-    dispatch(setNameAnswer(state.arr[number].nameAnswer))
+    dispatch(setAuthorAnswer(state.arr[number + 1].authorAnswer))
+    dispatch(setNameAnswer(state.arr[number + 1].nameAnswer))
   }
 
   const clickHandler = () => {
@@ -37,10 +37,11 @@ const BasicModal = (props: ModalType) => {
     <>
       <Modal open={props.open} sx={style}>
         <div className='modal'>
+          <div className='modal__answer' style={{ color: state.isAnswerTrue ? 'green' : 'red' }}>
+            {state.isAnswerTrue ? 'true' : 'false'}
+          </div>
           <img
-            src={`https://github.com/AlionaMu/art-data/blob/main/img/${
-              state.arr[state.roundNumber].id
-            }.jpg?raw=true`}
+            src={`https://github.com/AlionaMu/art-data/blob/main/img/${state.arr[number].id}.jpg?raw=true`}
             className='modal__image'
           ></img>
           <div className='modal__name'>{state.nameAnswer}</div>
