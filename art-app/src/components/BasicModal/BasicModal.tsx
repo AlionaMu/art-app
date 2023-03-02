@@ -2,8 +2,17 @@ import Modal from '@mui/material/Modal'
 import './BasicModal.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { addCount, setAuthorAnswer, setNameAnswer } from '../../store/paintersGameSlice'
-import { ModalType } from '../../types'
+import {
+  addRound,
+  setAuthorAnswer,
+  setGame,
+  setNameAnswer,
+  setNewGame,
+} from '../../store/paintersGameSlice'
+import { ModalType, paintersGame } from '../../types'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { getGameObj } from '../../utils/getRandomArr'
 
 const style = {
   position: 'absolute',
@@ -18,19 +27,31 @@ const style = {
 }
 
 const BasicModal = (props: ModalType) => {
+  const [last, setLast] = useState(false)
   const state = useSelector((state: RootState) => state.paintersGame)
   const dispatch = useDispatch()
   const number = state.roundNumber
 
+  const startNewGame = () => {
+    setLast(false)
+    props.handleClose()
+    dispatch(setNewGame())
+    const game: paintersGame = getGameObj()
+
+    dispatch(setGame(game))
+    dispatch(setAuthorAnswer(game.rounds[0].authorAnswer))
+    dispatch(setNameAnswer(game.rounds[0].nameAnswer))
+  }
+
   const useDispatchers = () => {
-    dispatch(addCount())
+    dispatch(addRound())
     dispatch(setAuthorAnswer(state.arr[number + 1].authorAnswer))
     dispatch(setNameAnswer(state.arr[number + 1].nameAnswer))
   }
 
   const clickHandler = () => {
     props.handleClose()
-    number >= 9 ? console.log('>>>>>') : useDispatchers()
+    number >= 9 ? setLast(true) : useDispatchers()
   }
 
   return (
@@ -40,15 +61,28 @@ const BasicModal = (props: ModalType) => {
           <div className='modal__answer' style={{ color: state.isAnswerTrue ? 'green' : 'red' }}>
             {state.isAnswerTrue ? 'true' : 'false'}
           </div>
+          {last ? <></> : <div className='modal__answer'>Result: {state.count} / 10</div>}
           <img
             src={`https://github.com/AlionaMu/art-data/blob/main/img/${state.arr[number].id}.jpg?raw=true`}
             className='modal__image'
           ></img>
           <div className='modal__name'>{state.nameAnswer}</div>
           <div className='modal__author'>{state.authorAnswer}</div>
-          <button className='modal__button' onClick={clickHandler}>
-            Continue
-          </button>
+
+          {last ? (
+            <>
+              <div className='modal__answer'>Final result: {state.count} / 10</div>
+              <Link to='/painters'>
+                <button className='modal__button' onClick={startNewGame}>
+                  Try again
+                </button>
+              </Link>
+            </>
+          ) : (
+            <button className='modal__button' onClick={clickHandler}>
+              Continue
+            </button>
+          )}
         </div>
       </Modal>
     </>

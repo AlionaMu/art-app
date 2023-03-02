@@ -9,6 +9,7 @@ const initialState = {
   nameAnswer: '',
   roundNumber: 0,
   isAnswerTrue: false,
+  count: 0,
 }
 
 const paintersGameSlice = createSlice({
@@ -18,7 +19,7 @@ const paintersGameSlice = createSlice({
     setGame: (state, action: PayloadAction<paintersGame>) => {
       state.arr = action.payload.rounds
     },
-    addCount: (state) => {
+    addRound: (state) => {
       ++state.roundNumber
     },
     setAuthorAnswer: (state, action: PayloadAction<string>) => {
@@ -30,9 +31,22 @@ const paintersGameSlice = createSlice({
     setAnswer: (state, action: PayloadAction<boolean>) => {
       state.isAnswerTrue = action.payload
     },
+    addCount: (state) => {
+      ++state.count
+    },
+    setNewGame: (state) => {
+      Object.assign(state, initialState)
+    },
   },
 })
 
-export const { setGame, addCount, setAuthorAnswer, setNameAnswer, setAnswer } =
-  paintersGameSlice.actions
+export const {
+  setGame,
+  addCount,
+  setAuthorAnswer,
+  setNameAnswer,
+  setAnswer,
+  addRound,
+  setNewGame,
+} = paintersGameSlice.actions
 export default paintersGameSlice.reducer

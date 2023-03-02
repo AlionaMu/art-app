@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '../../store'
-import { setAnswer } from '../../store/paintersGameSlice'
+import { addCount, setAnswer } from '../../store/paintersGameSlice'
 import { CardType, Item } from '../../types'
 import './PaintersCard.scss'
 
@@ -8,9 +8,15 @@ const PaintersCard = (props: CardType) => {
   const state = useSelector((state: RootState) => state.paintersGame)
   const dispatch = useDispatch<AppDispatch>()
   const number = state.roundNumber
+
+  const setRightAnswer = () => {
+    dispatch(addCount())
+    dispatch(setAnswer(true))
+  }
+
   const onClickHandler = (target: HTMLButtonElement) => {
     const value = target.dataset.text
-    value === state.arr[number].nameAnswer ? dispatch(setAnswer(true)) : dispatch(setAnswer(false))
+    value === state.arr[number].nameAnswer ? setRightAnswer() : dispatch(setAnswer(false))
     props.handleOpen()
   }
 
