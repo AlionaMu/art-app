@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import paintersGameReducer from '../store/paintersGameSlice'
+import resultsSliceReducer from './resultsSlice'
 
 export const store = configureStore({
   reducer: {
     paintersGame: paintersGameReducer,
+    results: resultsSliceReducer,
   },
 })
 

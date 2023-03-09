@@ -2,7 +2,7 @@ import { CardsArr } from './../types/index'
 import images from '../data/images'
 import { Item, paintersGame, paintersGameRound } from '../types'
 
-export const getCardsArr = () => {
+export const getCardsArr = (): any => {
   const arr = Array.from({ length: 4 }, () => Math.floor(Math.random() * 241))
   const cardsArr: Item[] = []
   arr.forEach((item) => {
@@ -14,7 +14,16 @@ export const getCardsArr = () => {
     }
     cardsArr.push(card)
   })
-  return { cardsArr, arr }
+
+  const x = cardsArr.filter((item) =>
+    cardsArr.filter((cardItem) => cardItem.author === item.author).length > 1 ? true : false,
+  )
+
+  if (x.length > 1) {
+    return getCardsArr()
+  } else {
+    return { cardsArr, arr }
+  }
 }
 
 const getRandomCard = (arr: Item[]) => {
@@ -30,7 +39,7 @@ export const getGameObj = () => {
   }
 
   while (game.rounds.length < 10) {
-    const authorsArr: CardsArr = getCardsArr()
+    const authorsArr: any | CardsArr = getCardsArr()
     const answer = getRandomCard(authorsArr.cardsArr)
     const round: paintersGameRound = {
       answers: authorsArr.cardsArr,

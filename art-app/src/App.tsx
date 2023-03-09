@@ -4,10 +4,10 @@ import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
 import Quiz from './pages/Quiz/Quiz'
 import { useRoutes } from 'react-router-dom'
-import Settings from './pages/Settings'
 import Paintings from './pages/Paintings/Paintings'
 import Painters from './pages/Painters/Painters'
 import GalleryList from './pages/GalleryList/GalleryList'
+import Results from './pages/Results/Results'
 
 const Routes = () => {
   const routes = useRoutes([
@@ -22,7 +22,7 @@ const Routes = () => {
     { path: 'about', element: <AboutUs /> },
     { path: '*', element: <Home /> },
     { path: 'quiz', element: <Quiz /> },
-    { path: 'settings', element: <Settings /> },
+    { path: 'results', element: <Results /> },
     { path: 'paintings', element: <Paintings /> },
     { path: 'painters', element: <Painters /> },
     { path: 'gallery', element: <GalleryList /> },

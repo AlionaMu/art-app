@@ -9,10 +9,11 @@ import {
   setNameAnswer,
   setNewGame,
 } from '../../store/paintersGameSlice'
-import { ModalType, paintersGame } from '../../types'
+import { ModalType, paintersGame, resultsGame } from '../../types'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getGameObj } from '../../utils/getRandomArr'
+import { setResult } from '../../store/resultsSlice'
 
 const style = {
   position: 'absolute',
@@ -29,6 +30,7 @@ const style = {
 const BasicModal = (props: ModalType) => {
   const [last, setLast] = useState(false)
   const state = useSelector((state: RootState) => state.paintersGame)
+  const resultsState = useSelector((state: RootState) => state.results)
   const dispatch = useDispatch()
   const number = state.roundNumber
 
@@ -54,6 +56,15 @@ const BasicModal = (props: ModalType) => {
     number >= 9 ? setLast(true) : useDispatchers()
   }
 
+  const setResults = () => {
+    const obj: resultsGame = {
+      player: '',
+      rightAnswers: state.count,
+      gameType: 'painters',
+    }
+    dispatch(setResult(obj))
+  }
+
   return (
     <>
       <Modal open={props.open} sx={style}>
@@ -72,11 +83,14 @@ const BasicModal = (props: ModalType) => {
           {last ? (
             <>
               <div className='modal__answer'>Final result: {state.count} / 10</div>
-              <Link to='/painters'>
-                <button className='modal__button' onClick={startNewGame}>
-                  Try again
+              <Link to='/results'>
+                <button className='modal__button' onClick={setResults}>
+                  Results
                 </button>
               </Link>
+              <button className='modal__button' onClick={startNewGame}>
+                Try Again
+              </button>
             </>
           ) : (
             <button className='modal__button' onClick={clickHandler}>

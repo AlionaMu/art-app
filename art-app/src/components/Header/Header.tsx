@@ -31,8 +31,8 @@ function Header() {
               </Link>
             </li>
             <li className='header__list-item'>
-              <Link to='/settings'>
-                <button className='header__button'>Settings</button>
+              <Link to='/results'>
+                <button className='header__button'>Results</button>
               </Link>
             </li>
           </ul>

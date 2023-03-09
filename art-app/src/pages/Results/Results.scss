@@ -1,0 +1,22 @@
+@import '../../styles/colors.scss';
+
+.results {
+  display: flex;
+
+  & > * {
+    border-bottom: 1px solid $add-color;
+  }
+
+  &__names-item {
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  &__item {
+    display: flex;
+    width: 90vw;
+    justify-content: space-around;
+    height: 30px;
+    font-size: 18px;
+  }
+}

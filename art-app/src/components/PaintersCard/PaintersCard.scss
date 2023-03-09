@@ -6,6 +6,7 @@
   align-items: center;
   font-weight: 700;
   width: 380px;
+  transition: left 5s cubic-bezier(0, 0.5, 0.5, 1);
 
   &__img {
     width: inherit;
@@ -51,32 +52,3 @@
     }
   }
 }
-
-// @media (min-width: 410px) {
-//   .answers-wrapper {
-//     justify-items: center;
-//     padding: 5px 15px;
-//   }
-// }
-// @media (min-width: 500px) {
-//   .answers-wrapper {
-//     padding: 5px 15vw;
-//   }
-// }
-// @media (min-width: 980px) {
-//   .answers-wrapper {
-//     padding: 5px 18vw;
-//     row-gap: 12px;
-//   }
-// }
-// @media (min-width: 1100px) {
-//   .answers-wrapper {
-//     padding: 5px 20vw;
-//     row-gap: 12px;
-//   }
-// }
-// @media (min-width: 1280px) {
-//   .answers-wrapper {
-//     padding: 5px 22vw;
-//   }
-// }

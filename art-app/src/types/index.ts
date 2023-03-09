@@ -33,3 +33,15 @@ export type ModalType = {
   handleOpen: () => void
   open: boolean
 }
+
+// Results Slice
+
+export interface resultsGame {
+  player: string
+  rightAnswers: number
+  gameType: string
+}
+
+export interface results {
+  answers: resultsGame[]
+}
