@@ -18,21 +18,23 @@ function Results() {
         <TableContainer>
           <Table aria-label='simple table'>
             <TableHead>
-              <TableRow sx={{ '& > *': { fontSize: '26px', fontWeight: 600 } }}>
+              <TableRow
+                sx={{ '& > *': { fontSize: '26px', fontWeight: 600, textAlign: 'center' } }}
+              >
                 <TableCell>Player</TableCell>
-                <TableCell align='right'>Result</TableCell>
+                <TableCell>Result</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {state.arr.map((item) => (
                 <TableRow
                   key={item.player}
-                  sx={{ '& > *': { fontSize: '20px', fontWeight: 600, color: '#79a1b0' } }}
+                  sx={{ '& > *': { fontSize: '20px', fontWeight: 600, textAlign: 'center' } }}
                 >
                   <TableCell component='th' scope='row'>
                     {item.player}
                   </TableCell>
-                  <TableCell align='right'>{item.rightAnswers}</TableCell>
+                  <TableCell>{item.rightAnswers}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

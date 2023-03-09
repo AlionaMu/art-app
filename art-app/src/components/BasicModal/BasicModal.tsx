@@ -17,7 +17,7 @@ import { setResult } from '../../store/resultsSlice'
 
 const style = {
   position: 'absolute',
-  top: '70%',
+  top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '250px',

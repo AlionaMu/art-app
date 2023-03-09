@@ -9,7 +9,6 @@ function Painters() {
 
   return (
     <main className='main'>
-      <section className='main__title-container'>painters game</section>
       <section className='painters wrapper'>
         <PaintersCard open={open} handleOpen={handleOpen}></PaintersCard>
         <BasicModal open={open} handleClose={handleClose} handleOpen={handleOpen}></BasicModal>
