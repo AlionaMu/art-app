@@ -6,7 +6,10 @@
   align-items: center;
   font-weight: 700;
   width: 380px;
-  transition: left 5s cubic-bezier(0, 0.5, 0.5, 1);
+
+  animation-name: Appearance;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 
   &__img {
     width: inherit;

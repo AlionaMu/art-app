@@ -74,7 +74,7 @@ const BasicModal = (props: ModalType) => {
           </div>
           {last ? <></> : <div className='modal__answer'>Result: {state.count} / 10</div>}
           <img
-            src={`https://github.com/AlionaMu/art-data/blob/main/img/${state.arr[number].id}.jpg?raw=true`}
+            src={`../../art-data/img/${state.arr[number].id}.jpg`}
             className='modal__image'
           ></img>
           <div className='modal__name'>{state.nameAnswer}</div>

@@ -7,6 +7,10 @@
   background-color: $font-color;
   border-radius: 10px;
 
+  animation-name: Appearance;
+  animation-duration: 3s;
+  animation-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+
   &:hover {
     cursor: pointer;
     box-shadow: 1px 2px 4px 4px rgba(0, 0, 255, 0.2);

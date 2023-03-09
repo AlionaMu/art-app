@@ -9,7 +9,7 @@ const GalleryCard = (props: any) => {
         <div className='gallery-card__name'>Year: {props.props.year}</div>
       </div>
       <img
-        src={`https://github.com/AlionaMu/art-data/blob/main/img/${props.props.imageNum}.jpg?raw=true`}
+        src={`../../art-data/img/${props.props.imageNum}.jpg`}
         className='gallery-card__image'
       ></img>
     </div>

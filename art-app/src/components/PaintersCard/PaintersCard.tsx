@@ -24,7 +24,7 @@ const PaintersCard = (props: CardType) => {
     <div className='painters-card' id={state.arr[number].id.toString()}>
       <div className='painters-card__text'>Who is the author of this picture?</div>
       <img
-        src={`https://github.com/AlionaMu/art-data/blob/main/img/${state.arr[number].id}.jpg?raw=true`}
+        src={`../../art-data/img/${state.arr[number].id}.jpg`}
         className='painters-card__img'
       ></img>
       <div

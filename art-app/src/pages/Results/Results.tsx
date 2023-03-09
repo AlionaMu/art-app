@@ -25,7 +25,10 @@ function Results() {
             </TableHead>
             <TableBody>
               {state.arr.map((item) => (
-                <TableRow key={item.player} sx={{ '& > *': { fontSize: '20px', fontWeight: 600 } }}>
+                <TableRow
+                  key={item.player}
+                  sx={{ '& > *': { fontSize: '20px', fontWeight: 600, color: '#79a1b0' } }}
+                >
                   <TableCell component='th' scope='row'>
                     {item.player}
                   </TableCell>
